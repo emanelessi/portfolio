@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="bg-background">
@@ -21,14 +22,14 @@
         <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3">Work</a>
         <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3">Contact</a>
     </nav>
-    <img src="../assets/nav.svg" class="justify-start absolute top-[-2px] w-2/12 z-20" alt="nav"/>
+    <img src="../assets/nav.svg" class="justify-start hidden absolute top-[-2px] xl:w-2/12 md:w-[50%] xl:z-20" alt="nav"/>
     <div class="relative w-full">
-        <div class="absolute inset-0 flex justify-end bg-no-repeat bg-right h-screen "
-             style="background-image: url('../assets/hero.svg');">
+        <div class="absolute inset-0 flex justify-end bg-no-repeat bg-right xl:h-screen bg-contain "
+             style="background-image: url('../assets/hero.svg');     ">
         </div>
         <div class="flex justify-center w-full relative">
-            <div class="w-8/12 mt-20">
-                <h1 class="text-6xl font-extrabold text-white my-8">
+            <div class="lg:w-8/12 w-full mt-20">
+                <h1 class="lg:text-6xl text-4xl font-extrabold text-white lg:my-8 mx-20">
                     Creative UI Designer<br>
                     Sourasith Phomhome<br>
                     Based in Montreal
@@ -36,15 +37,15 @@
             </div>
 
         </div>
-        <div class=" flex mx-52 relative">
-            <button class=" w-2/12 rounded-full border p-4 m-4 text-white bg-white/30 border-none">
+        <div class=" flex lg:mx-52 mx-20 relative">
+            <button class=" lg:w-2/12 w-full rounded-full border p-4 lg:m-4 m-1 text-white bg-white/30 border-none">
                 Hire me
             </button>
-            <button class="bg-gradient-to-r from-tertiary to-secondary w-2/12 border-none text-white rounded-full border p-4 m-4">
+            <button class="bg-gradient-to-r from-tertiary to-secondary lg:w-2/12 w-full border-none text-white rounded-full border p-4  m-1 lg:m-4">
                 Download CV
             </button>
         </div>
-        <div class="w-20 backdrop-blur-lg bg-gradient-to-r from-quaternary/90 to-transparent shadow-inner rounded-r-2xl hover:bg-white/40 transition-colors duration-300">
+        <div class="w-20  backdrop-blur-lg bg-gradient-to-r from-quaternary/90 to-transparent shadow-inner rounded-r-2xl hover:bg-white/40 transition-colors duration-300">
             <div class="-mt-[190px] flex flex-col justify-center w-8/12 py-8">
                 <img src="../assets/home.svg" alt="home" class="transition-transform duration-300 hover:scale-125"/>
                 <img src="../assets/about.svg" alt="about" class="transition-transform duration-300 hover:scale-125"/>
@@ -56,9 +57,9 @@
     </div>
 </section>
 <section class="py-64 relative" style="background-image:url('../assets/about-bg.svg'); background-size: cover;">
-    <div class="flex w-[630px] h-[630px] mx-auto rounded-full justify-center items-center bg-gradient-to-r from-tertiary to-secondary">
-        <div class="absolute top-32">
-            <img src="../assets/girl.svg" alt="girl" class="rounded-full object-cover">
+    <div class="flex w-10/12 h-[470.52px] lg:w-[630px] lg:h-[630px] mx-auto rounded-full justify-center items-center bg-gradient-to-r from-tertiary to-secondary">
+        <div class="absolute top-32 ">
+            <img src="../assets/girl.svg" alt="girl" class="w-7/12 rounded-full object-cover">
         </div>
         <div class="flex flex-col justify-center items-start w-9/12	 pl-48">
             <h1 class="text-2xl font-bold text-white ">About me</h1>
@@ -70,10 +71,101 @@
             </p>
         </div>
     </div>
-        <img src="../assets/diamond.svg" alt="diamond" class="absolute top-[630px] left-[69%] transform -translate-x-1/2" />
-
-
+        <img src="../assets/diamond.svg" alt="diamond" class="absolute top-[630px] lg:left-[69%] transform -translate-x-1/2" />
 </section>
+<div x-data="{ open: false }" class="p-4">
+    <button @click="open = !open" class="bg-blue-500 text-white px-4 py-2 rounded">Toggle Content</button>
+    <div x-show="open" class="mt-4 p-4 bg-gray-100 rounded">
+        <p>Some hidden content shown when the button is clicked.</p>
+    </div>
+</div>
+
+<!--<section>-->
+<!--    <div class="w-[1440px] h-[1024px] relative bg-[#0f103f]">-->
+<!--        <div class="w-[1660.24px] h-[1000px] left-[-136px] top-[12px] absolute">-->
+<!--            <div class="w-[1000px] h-[1000px] left-[356px] top-0 absolute bg-[#2954a3] rounded-full blur-[200px]"></div>-->
+<!--            <div class="w-[954.99px] h-[470.52px] left-[379px] top-[265px] absolute">-->
+<!--            </div>-->
+<!--            <div class="w-[1660.24px] h-[818px] left-0 top-[94px] absolute">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="w-[1149px] h-[399px] left-[146px] top-[313px] absolute">-->
+<!--            <div class="w-[380px] h-[280px] left-0 top-[93px] absolute">-->
+<!--                <div class="w-[380px] pt-3.5 pb-[30.81px] left-0 top-0 absolute bg-white/40 rounded-[30px] border border-white backdrop-blur-[20px] justify-center items-center inline-flex">-->
+<!--                    <img class="w-[443px] h-[235.19px]" src="https://via.placeholder.com/443x235" />-->
+<!--                </div>-->
+<!--                <div class="w-[380px] pt-[15px] pb-3.5 left-0 top-[220px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
+<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">Designs</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="w-[380px] h-[280px] left-[769px] top-[98px] absolute">-->
+<!--                <div class="pl-[26px] pr-[41.97px] pt-5 pb-[11px] left-0 top-0 absolute bg-white/40 rounded-[30px] border border-white backdrop-blur-[20px] justify-start items-center inline-flex">-->
+<!--                    <img class="w-[312.03px] h-[249px]" src="https://via.placeholder.com/312x249" />-->
+<!--                </div>-->
+<!--                <div class="w-[380px] pl-[134px] pr-[133px] pt-[15px] pb-3.5 left-0 top-[220px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
+<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">Mockups</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="w-[440px] h-[330px] left-[354px] top-[69px] absolute">-->
+<!--                <div class="w-[440px] pl-[45px] pr-[45.41px] pt-[13px] pb-[69px] left-0 top-0 absolute bg-[#b5f8fc]/40 rounded-[30px] border-2 border-white backdrop-blur-[20px] justify-center items-center inline-flex">-->
+<!--                    <div class="grow shrink basis-0 h-[248px] relative">-->
+<!--                        <img class="w-[99.61px] h-[215.57px] left-0 top-[15.85px] absolute shadow" src="https://via.placeholder.com/100x216" />-->
+<!--                        <img class="w-[114.60px] h-[248px] left-[118.39px] top-0 absolute shadow" src="https://via.placeholder.com/115x248" />-->
+<!--                        <img class="w-[99.61px] h-[215.57px] left-[249.98px] top-[15.85px] absolute shadow" src="https://via.placeholder.com/100x216" />-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="w-[440px] pt-[15px] pb-3.5 left-0 top-[270px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
+<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">UI Designs</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="left-[456px] top-0 absolute text-white text-3xl font-bold font-['Poppins'] leading-[39px]">My recent work</div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<section>-->
+<!--    <div class="w-full relative">-->
+<!--        <div class="swiper centered-slide-carousel swiper-container relative">-->
+<!--            <div class="swiper-wrapper">-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 1</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 2</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 3</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 4</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 5</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
+<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 6</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="swiper-pagination"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+<script type="module" src="../js/app.js"></script>
 
 </body>
 </html>
