@@ -1,51 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
+    <meta name="description" content="Eman Elessi,Full Stack Developer, portfolio">
+    <meta property="og:title" content="Eman Elessi Portfolio">
+<!--    <meta property="og:image" content="../assets/thumbnail.jpg">-->
+    <title>Eman Elessi Portfolio</title>
     <link href="/src/css/output.css" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v3.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="bg-background">
 <section class="relative">
-    <nav class="container flex justify-center  space-x-4">
-        <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3"
-           href="index.html">Home</a>
-        <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3">About
-            me</a>
-        <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3">Work</a>
-        <a class="m-8 justify-center text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary p-3">Contact</a>
+    <nav x-data="{ open: false }" class="container mx-auto">
+        <div class="flex justify-between items-center md:hidden px-4 py-2 bg-gray-800">
+            <a href="index.html" class="text-white font-bold text-lg">Eman Elessi</a>
+            <button @click="open = !open" class="text-white p-3 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div :class="{'block': open, 'hidden': !open}"
+             class="md:flex md:items-center md:justify-center md:space-x-4 hidden bg-gray-900 md:bg-transparent  transition-all duration-300 ease-in-out md:py-16">
+            <a href="index.html"
+               class="block text-center  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary  md:inline-block text-white font-medium py-2 px-4 hover:bg-gray-700 md:hover:bg-transparent md:py-0">Home</a>
+            <a href="#about"
+               class="block text-center  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary  md:inline-block text-white font-medium py-2 px-4 hover:bg-gray-700 md:hover:bg-transparent md:py-0">About
+                me</a>
+            <a href="#work"
+               class="block text-center  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary  md:inline-block text-white font-medium py-2 px-4 hover:bg-gray-700 md:hover:bg-transparent md:py-0">Work</a>
+            <a href="#contact"
+               class="block text-center  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary  md:inline-block text-white font-medium py-2 px-4 hover:bg-gray-700 md:hover:bg-transparent md:py-0">Contact</a>
+        </div>
     </nav>
-    <img src="../assets/nav.svg" class="justify-start hidden absolute top-[-2px] xl:w-2/12 md:w-[50%] xl:z-20" alt="nav"/>
+
+    <img src="../assets/nav.svg" class="justify-start md:block hidden absolute top-[-2px] w-2/12  xl:z-20"
+         alt="nav"/>
+
     <div class="relative w-full">
-        <div class="absolute inset-0 flex justify-end bg-no-repeat bg-right xl:h-screen bg-contain "
-             style="background-image: url('../assets/hero.svg');     ">
+        <div class="absolute inset-0 flex justify-end bg-no-repeat bg-right xl:h-screen bg-contain py-64 md:py-16"
+             style="background-image: url('../assets/hero.svg');">
         </div>
         <div class="flex justify-center w-full relative">
             <div class="lg:w-8/12 w-full mt-20">
-                <h1 class="lg:text-6xl text-4xl font-extrabold text-white lg:my-8 mx-20">
+                <h1 class="lg:text-6xl text-2xl font-extrabold text-white lg:my-8  mx-20 lg:mx-2">
                     Creative UI Designer<br>
                     Sourasith Phomhome<br>
                     Based in Montreal
                 </h1>
             </div>
-
         </div>
-        <div class=" flex lg:mx-52 mx-20 relative">
-            <button class=" lg:w-2/12 w-full rounded-full border p-4 lg:m-4 m-1 text-white bg-white/30 border-none">
+
+        <div class="flex lg:mx-52 mx-20 relative">
+            <button class="xl:w-2/12  lg:w-40 rounded-full border p-4 lg:m-4 m-1 text-white bg-white/30 border-none">
                 Hire me
             </button>
-            <button class="bg-gradient-to-r from-tertiary to-secondary lg:w-2/12 w-full border-none text-white rounded-full border p-4  m-1 lg:m-4">
+            <button class="bg-gradient-to-r from-tertiary to-secondary xl:w-2/12 lg:w-40 border-none text-white rounded-full border p-4  m-1 lg:m-4">
                 Download CV
             </button>
         </div>
-        <div class="w-20  backdrop-blur-lg bg-gradient-to-r from-quaternary/90 to-transparent shadow-inner rounded-r-2xl hover:bg-white/40 transition-colors duration-300">
+
+        <div class="w-20 backdrop-blur-lg bg-gradient-to-r from-quaternary/90 to-transparent shadow-inner rounded-r-2xl hover:bg-white/40 transition-colors duration-300">
             <div class="-mt-[190px] flex flex-col justify-center w-8/12 py-8">
                 <img src="../assets/home.svg" alt="home" class="transition-transform duration-300 hover:scale-125"/>
                 <img src="../assets/about.svg" alt="about" class="transition-transform duration-300 hover:scale-125"/>
@@ -56,12 +79,13 @@
         </div>
     </div>
 </section>
-<section class="py-64 relative" style="background-image:url('../assets/about-bg.svg'); background-size: cover;">
-    <div class="flex w-10/12 h-[470.52px] lg:w-[630px] lg:h-[630px] mx-auto rounded-full justify-center items-center bg-gradient-to-r from-tertiary to-secondary">
-        <div class="absolute top-32 ">
-            <img src="../assets/girl.svg" alt="girl" class="w-7/12 rounded-full object-cover">
+<section class="py-64 w-full relative bg-cover bg-center bg-no-repeat"
+         style="background-image:url('../assets/about-bg.svg');" id="about">
+    <div class="flex md:w-[630px] w-10/12 h-96  md:h-[630px] mx-auto rounded-full justify-center items-center bg-gradient-to-r from-tertiary to-secondary">
+        <div class="absolute top-[280px] md:block hidden">
+            <img src="../assets/girl.svg" alt="girl" class="md:w-9/12 rounded-full object-cover">
         </div>
-        <div class="flex flex-col justify-center items-start w-9/12	 pl-48">
+        <div class="md:flex flex-col justify-center items-start md:w-9/12 md:pl-48 px-10">
             <h1 class="text-2xl font-bold text-white ">About me</h1>
             <p class="text-white mt-2 ">
                 My name is Sourasith Phomhome. I’m a UI Designer and an instructor based in Montreal. I’m currently
@@ -71,108 +95,210 @@
             </p>
         </div>
     </div>
-        <img src="../assets/diamond.svg" alt="diamond" class="absolute top-[630px] lg:left-[69%] transform -translate-x-1/2" />
+    <img src="../assets/diamond.svg" alt="diamond"
+         class="absolute md:top-[630px] top-[530px]  lg:left-[69%]   left-[80%] w-3/12  transform -translate-x-1/2"/>
 </section>
-<div x-data="{ open: false }" class="p-4">
-    <button @click="open = !open" class="bg-blue-500 text-white px-4 py-2 rounded">Toggle Content</button>
-    <div x-show="open" class="mt-4 p-4 bg-gray-100 rounded">
-        <p>Some hidden content shown when the button is clicked.</p>
+<section class="bg-cover bg-center bg-no-repeat" style="background-image:url('../assets/work-bg.svg');" id="work">
+    <div x-data="{
+    activeSlide: 0,
+    slidesToShow: window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 : 3),
+   totalSlides: 5,
+    timer: null,
+    startTimer() {
+        this.timer = setInterval(() => {
+            this.nextSlide();
+        }, 5000);
+    },
+    stopTimer() {
+        clearInterval(this.timer);
+    },
+    nextSlide() {
+        this.activeSlide = (this.activeSlide + this.slidesToShow) % this.totalSlides;
+    },
+    prevSlide() {
+        this.activeSlide = (this.activeSlide - this.slidesToShow + this.totalSlides) % this.totalSlides;
+    },
+    updateSlidesToShow() {
+        this.slidesToShow = window.innerWidth < 640 ? 1 : (window.innerWidth < 1024 ? 2 :3);    }
+}" @mouseenter="stopTimer()" @mouseleave="startTimer()" @resize.window="updateSlidesToShow()"
+         class="overflow-hidden py-64">
+        <div class="w-full p-20 relative">
+            <div class="w-full h-[1000px] absolute">
+                <div class="w-[650px] h-[450px] mx-auto left-[300px] top-[-80px] bg-quaternary rounded-full blur-[200px] absolute"></div>
+            </div>
+            <div class="container mx-auto px-4 py-10">
+                <div class="flex"
+                     :style="'transform: translateX(-' + (activeSlide * (100 / slidesToShow)) + '%); transition: transform 0.5s;'">
+
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 mx-5 sm:w-1/2 lg:w-1/3">
+                        <div class="relative transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-black-500/50 hover:z-10">
+                            <div class="w-full pt-3.5 pb-[30.81px] bg-white/40 rounded-[30px] backdrop-blur-[20px] flex justify-center items-center">
+                                <img src="../assets/img2.svg" class="w-full h-[235.19px] rounded-2xl"/>
+                            </div>
+                            <div class="w-full pt-[15px] pb-3.5 absolute bottom-0 bg-black/20 rounded-bl-[30px] rounded-br-[30px] flex justify-center items-center">
+                                <div class="text-white text-2xl font-bold   leading-[31.20px]">Designs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 mx-5 sm:w-1/2 lg:w-1/3">
+                        <div class="relative transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-black-500/50 hover:z-10">
+                            <div class="w-full pt-3.5 pb-[30.81px] bg-white/40 rounded-[30px] backdrop-blur-[20px] flex justify-center items-center">
+                                <img src="../assets/img1.svg" class="w-full h-[235.19px] rounded-2xl"/>
+                            </div>
+                            <div class="w-full pt-[15px] pb-3.5 absolute bottom-0 bg-black/20 rounded-bl-[30px] rounded-br-[30px] flex justify-center items-center">
+                                <div class="text-white text-2xl font-bold   leading-[31.20px]">Mockups
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 mx-5 sm:w-1/2 lg:w-1/3">
+                        <div class="relative transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-black-500/50 hover:z-10">
+                            <div class="w-full pt-3.5 pb-[30.81px] bg-white/40 rounded-[30px] backdrop-blur-[20px] flex justify-center items-center">
+                                <img src="../assets/img3.svg" class="w-full h-[235.19px] rounded-2xl"/>
+                            </div>
+                            <div class="w-full pt-[15px] pb-3.5 absolute bottom-0 bg-black/20 rounded-bl-[30px] rounded-br-[30px] flex justify-center items-center">
+                                <div class="text-white text-2xl font-bold   leading-[31.20px]">UI Designs
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full flex-shrink-0 mx-5 sm:w-1/2 lg:w-1/3">
+                        <div class="relative transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-black-500/50 hover:z-10">
+                            <div class="w-full pt-3.5 pb-[30.81px] bg-white/40 rounded-[30px] backdrop-blur-[20px] flex justify-center items-center">
+                                <img src="../assets/img1.svg" class="w-full h-[235.19px] rounded-2xl"/>
+                            </div>
+                            <div class="w-full pt-[15px] pb-3.5 absolute bottom-0 bg-black/20 rounded-bl-[30px] rounded-br-[30px] flex justify-center items-center">
+                                <div class="text-white text-2xl font-bold   leading-[31.20px]">App Design
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="w-full flex-shrink-0 mx-5 sm:w-1/2 lg:w-1/3">
+                        <div class="relative transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-black-500/50 hover:z-10">
+                            <div class="w-full pt-3.5 pb-[30.81px] bg-white/40 rounded-[30px] backdrop-blur-[20px] flex justify-center items-center">
+                                <img src="../assets/img1.svg" class="w-full h-[235.19px] rounded-2xl"/>
+                            </div>
+                            <div class="w-full pt-[15px] pb-3.5 absolute bottom-0 bg-black/20 rounded-bl-[30px] rounded-br-[30px] flex justify-center items-center">
+                                <div class="text-white text-2xl font-bold   leading-[31.20px]">Web Design
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination dots -->
+                <div class="absolute left-0 bottom-8 w-full  flex justify-center space-x-2 ">
+                    <template x-for="(dot, index) in Math.ceil(totalSlides / slidesToShow)" :key="index">
+                        <button @click="activeSlide = index * slidesToShow; stopTimer(); startTimer()"
+                                class="w-3 h-3 rounded-full bg-white"
+                                :class="{ 'bg-blue-600': activeSlide === index * slidesToShow }"></button>
+                    </template>
+                </div>
+
+            </div>
+        </div>
     </div>
-</div>
 
-<!--<section>-->
-<!--    <div class="w-[1440px] h-[1024px] relative bg-[#0f103f]">-->
-<!--        <div class="w-[1660.24px] h-[1000px] left-[-136px] top-[12px] absolute">-->
-<!--            <div class="w-[1000px] h-[1000px] left-[356px] top-0 absolute bg-[#2954a3] rounded-full blur-[200px]"></div>-->
-<!--            <div class="w-[954.99px] h-[470.52px] left-[379px] top-[265px] absolute">-->
-<!--            </div>-->
-<!--            <div class="w-[1660.24px] h-[818px] left-0 top-[94px] absolute">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="w-[1149px] h-[399px] left-[146px] top-[313px] absolute">-->
-<!--            <div class="w-[380px] h-[280px] left-0 top-[93px] absolute">-->
-<!--                <div class="w-[380px] pt-3.5 pb-[30.81px] left-0 top-0 absolute bg-white/40 rounded-[30px] border border-white backdrop-blur-[20px] justify-center items-center inline-flex">-->
-<!--                    <img class="w-[443px] h-[235.19px]" src="https://via.placeholder.com/443x235" />-->
-<!--                </div>-->
-<!--                <div class="w-[380px] pt-[15px] pb-3.5 left-0 top-[220px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
-<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">Designs</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="w-[380px] h-[280px] left-[769px] top-[98px] absolute">-->
-<!--                <div class="pl-[26px] pr-[41.97px] pt-5 pb-[11px] left-0 top-0 absolute bg-white/40 rounded-[30px] border border-white backdrop-blur-[20px] justify-start items-center inline-flex">-->
-<!--                    <img class="w-[312.03px] h-[249px]" src="https://via.placeholder.com/312x249" />-->
-<!--                </div>-->
-<!--                <div class="w-[380px] pl-[134px] pr-[133px] pt-[15px] pb-3.5 left-0 top-[220px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
-<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">Mockups</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="w-[440px] h-[330px] left-[354px] top-[69px] absolute">-->
-<!--                <div class="w-[440px] pl-[45px] pr-[45.41px] pt-[13px] pb-[69px] left-0 top-0 absolute bg-[#b5f8fc]/40 rounded-[30px] border-2 border-white backdrop-blur-[20px] justify-center items-center inline-flex">-->
-<!--                    <div class="grow shrink basis-0 h-[248px] relative">-->
-<!--                        <img class="w-[99.61px] h-[215.57px] left-0 top-[15.85px] absolute shadow" src="https://via.placeholder.com/100x216" />-->
-<!--                        <img class="w-[114.60px] h-[248px] left-[118.39px] top-0 absolute shadow" src="https://via.placeholder.com/115x248" />-->
-<!--                        <img class="w-[99.61px] h-[215.57px] left-[249.98px] top-[15.85px] absolute shadow" src="https://via.placeholder.com/100x216" />-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="w-[440px] pt-[15px] pb-3.5 left-0 top-[270px] absolute bg-black/30 rounded-bl-[30px] rounded-br-[30px] border border-white justify-center items-center inline-flex">-->
-<!--                    <div class="text-white text-2xl font-bold font-['Poppins'] leading-[31.20px]">UI Designs</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="left-[456px] top-0 absolute text-white text-3xl font-bold font-['Poppins'] leading-[39px]">My recent work</div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+</section>
+<section class="lg:py-64 py-10 relative z-50" id="contact">
+    <div>
+        <img src="../assets/form-girl.svg" class="absolute lg:block hidden my-[-650px] mx-16 z-50 "/>
+    </div>
 
-<!--<section>-->
-<!--    <div class="w-full relative">-->
-<!--        <div class="swiper centered-slide-carousel swiper-container relative">-->
-<!--            <div class="swiper-wrapper">-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 1</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 2</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 3</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 4</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 5</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="swiper-slide">-->
-<!--                    <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">-->
-<!--                        <span class="text-3xl font-semibold text-indigo-600">Slide 6</span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="swiper-pagination"></div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
+    <div>
+        <img src="../assets/form-bg.svg" class="absolute w-full my-[-360px] z-30"/>
+    </div>
 
+    <div class="lg:w-8/12  lg:mx-auto  md:flex justify-center container relative z-40 items-center bg-secondary/60  backdrop-blur-[20px]  rounded-2xl p-10">
+        <div class="md:w-5/12 justify-center items-start lg:px-10">
+            <h1 class="text-white text-2xl font-bold my-5">Get in touch</h1>
+            <p class="text-white text-[17px] font-normal my-5">
+                I’m very approachable and would love to speak to you. Feel free to call, send me an email. Follow me on
+                social media or simply complete the enquiry form.
+            </p>
+            <div class="flex flex-col py-10">
+                <div class="flex items-center gap-2 text-white mb-5">
+                    <img src="../assets/icon1.svg" alt="phone"/>
+                    <p>1-514-456-2753</p>
+                </div>
+                <div class="flex items-center gap-2 text-white mb-5">
+                    <img src="../assets/icon2.svg" alt="email"/>
+                    <p>Sou12@gmail.com</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="md:w-5/12 justify-center items-center lg:px-10">
+            <h1 class="text-white text-xl font-bold">Send me a message</h1>
+            <form>
+                <input type="text" placeholder="Name"
+                       class="w-full h-10 my-2 p-4 bg-white/30 rounded-[10px] shadow justify-start items-start gap-2.5 inline-flex"/>
+                <input type="email" placeholder="Email Address"
+                       class="w-full h-10 my-2 p-4 bg-white/30 rounded-[10px] shadow justify-start items-start gap-2.5 inline-flex"/>
+                <input type="text" placeholder="Subject"
+                       class="w-full h-10 my-2 p-4 bg-white/30 rounded-[10px] shadow justify-start items-start gap-2.5 inline-flex"/>
+                <textarea type="text" placeholder="Your message"
+                          class="w-full h-60 my-2 p-4 bg-white/30 rounded-[10px] shadow justify-start items-start gap-2.5 inline-flex"></textarea>
+                <button type="submit"
+                        class="text-white text-md font-normal  w-40 h-10 p-2 bg-gradient-to-r from-[#c961de] to-[#2954a3] rounded-[10px] shadow justify-center items-center gap-2 inline-flex">
+                    Send message
+                </button>
 
-<script >
-    import Alpine from 'alpinejs';
+            </form>
+        </div>
+    </div>
+</section>
+<footer class=" relative  bg-secondary/30 shadow z-50 py-12">
+    <div>
+        <img src="../assets/footer.svg"
+             class="absolute w-64 md:w-96 md:my-[-230px] my-[-130px] mx-16 z-40"/>
+    </div>
 
-window.Alpine = Alpine;
+    <div class="container md:flex hidden  justify-center  space-x-4  py-14">
+        <div class="justify-center items-center flex mx-2">
+            <img src="../assets/homeIcon.svg">
+            <a class="text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary "
+               href="index.html">Home</a>
+        </div>
+        <div class="justify-center items-center flex mx-2">
+            <img src="../assets/aboutIcon.svg">
+            <a class="text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary "
+               href="#about">About
+                me</a>
+        </div>
+        <div class="justify-center items-center flex mx-2">
+            <img src="../assets/workIcon.svg">
+            <a class=" text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary "
+               href="#work">Work</a>
+        </div>
+        <div class="justify-center items-center flex mx-2">
+            <img src="../assets/contactIcon.svg">
+            <a class=" text-white font-medium  hover:underline visited:bg-tertiary active:bg-tertiary focus:bg-tertiary "
+               href="#contact">Contact</a>
+        </div>
+    </div>
+    <div class="container flex justify-center  space-x-4 p-20">
+        <img src="../assets/instagram.svg"/>
+        <img src="../assets/twitter.svg"/>
+        <img src="../assets/linkedin.svg"/>
+        <img src="../assets/facebook.svg"/>
+        <img src="../assets/youTube.svg"/>
 
-Alpine.start();
-</script>
-
+    </div>
+    <hr class="text-white/30 md:mx-20 mx-10">
+    <p class="flex justify-end text-white py-5 md:mx-20 mx-10">Terms of Service - Privacy Policy</p>
+</footer>
 </body>
 </html>
 
